@@ -1,0 +1,15 @@
+{
+  "extends": ["next", "next/core-web-vitals"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "no-useless-escape": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "off",
+    "react/prop-types": "off",
+    "react/no-unescaped-entities": "off",
+    "no-prototype-builtins": "off",
+    "react/jsx-key": "off",
+    "react/display-name": "off",
+    "require-jsdoc": 0
+  }
+}
