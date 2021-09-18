@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import invariant from "invariant";
 
 export default function Home() {
+  const [bleCompat, setBleCompat] = useState(false);
+
   const requestBluetooth = () => {
     const _navigator = navigator;
     invariant(
@@ -41,8 +43,7 @@ export default function Home() {
 
       if (bluetoothAvailability) {
         console.log("+ Bluetooth is available");
-
-        await requestDeviceAsync();
+        setBleCompat(true);
       }
     });
   }, []);
@@ -55,6 +56,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="text-7xl text-green-500 font-extrabold">Hello World</h1>
+      {bleCompat && (
+        <button
+          onClick={async () => {
+            await requestDeviceAsync();
+          }}
+        >
+          Find devices
+        </button>
+      )}
     </div>
   );
 }
