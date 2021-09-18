@@ -818,6 +818,32 @@ module.exports = {
       40: "40",
       50: "50",
     },
+    extend: {
+      colors: {
+        primary: "#33EDB7",
+        dg: "#0D111D",
+      },
+      maxWidth: {
+        12: "12rem",
+        16: "16rem",
+      },
+      animation: {
+        tilt: "tilt 10s infinite linear",
+      },
+      keyframes: {
+        tilt: {
+          "0%, 50%, 100%": {
+            transform: "rotate(0deg)",
+          },
+          "25%": {
+            transform: "rotate(0.5deg)",
+          },
+          "75%": {
+            transform: "rotate(-0.5deg)",
+          },
+        },
+      },
+    },
   },
   variantOrder: [
     "first",
