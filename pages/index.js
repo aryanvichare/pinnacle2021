@@ -1,6 +1,52 @@
+import { useEffect } from "react";
 import Head from "next/head";
+import invariant from "invariant";
 
 export default function Home() {
+  const requestBluetooth = () => {
+    const _navigator = navigator;
+    invariant(
+      _navigator.bluetooth,
+      "This device is not capable of using Bluetooth"
+    );
+
+    return _navigator.bluetooth;
+  };
+
+  async function getAvailabilityAsync() {
+    const bluetooth = requestBluetooth();
+    if (bluetooth.getAvailability) {
+      return await requestBluetooth().getAvailability();
+    } else {
+      return !!bluetooth;
+    }
+  }
+
+  async function requestDeviceAsync(options = { acceptAllDevices: true }) {
+    try {
+      const device = await requestBluetooth().requestDevice(options);
+      return { type: "success", device };
+    } catch (error) {
+      if (error.code === 8) {
+        // User Cancelled
+        return { type: "cancel" };
+      }
+      throw error;
+    }
+  }
+
+  useEffect(() => {
+    getAvailabilityAsync().then(async (data) => {
+      const bluetoothAvailability = data;
+
+      if (bluetoothAvailability) {
+        console.log("+ Bluetooth is available");
+
+        await requestDeviceAsync();
+      }
+    });
+  }, []);
+
   return (
     <div>
       <Head>
