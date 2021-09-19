@@ -1,0 +1,152 @@
+{
+  "alpha": [
+    {
+      "name": "alpha-8hz-RH_binaural_440.0_448.0",
+      "freq": 8
+    },
+    {
+      "name": "alpha-9hz-RH_binaural_440.0_449.0",
+      "freq": 9
+    },
+    {
+      "name": "alpha-10hz-RH_binaural_440.0_450.0",
+      "freq": 10
+    },
+    {
+      "name": "alpha-11hz-RH_binaural_440.0_451.0",
+      "freq": 11
+    },
+    {
+      "name": "alpha-12hz-RH_binaural_440.0_452.0",
+      "freq": 12
+    },
+    {
+      "name": "beta-13hz-RH_binaural_440.0_453.0",
+      "freq": 13
+    }
+  ],
+  "beta": [
+    {
+      "name": "beta-14hz-RH_binaural_440.0_454.0",
+      "freq": 14
+    },
+    {
+      "name": "beta-15hz-RH_binaural_440.0_455.0",
+      "freq": 15
+    },
+    {
+      "name": "beta-16hz-RH_binaural_440.0_456.0",
+      "freq": 16
+    },
+    {
+      "name": "beta-17hz-RH_binaural_440.0_457.0",
+      "freq": 17
+    },
+    {
+      "name": "beta-18hz-RH_binaural_440.0_458.0",
+      "freq": 18
+    },
+    {
+      "name": "beta-19hz-RH_binaural_440.0_459.0",
+      "freq": 19
+    },
+    {
+      "name": "beta-20hz-RH_binaural_440.0_460.0",
+      "freq": 20
+    },
+    {
+      "name": "beta-21hz-RH_binaural_440.0_461.0",
+      "freq": 21
+    },
+    {
+      "name": "beta-22hz-RH_binaural_440.0_462.0",
+      "freq": 22
+    },
+    {
+      "name": "beta-23hz-RH_binaural_440.0_463.0",
+      "freq": 23
+    },
+    {
+      "name": "beta-24hz-RH_binaural_440.0_464.0",
+      "freq": 24
+    },
+    {
+      "name": "beta-25hz-RH_binaural_440.0_465.0",
+      "freq": 25
+    }
+  ],
+  "delta": [
+    {
+      "name": "delta-1hz-RH_binaural_440.0_441.0",
+      "freq": 1
+    },
+    {
+      "name": "delta-2hz-RH_binaural_440.0_442.0",
+      "freq": 2
+    },
+    {
+      "name": "delta-3hz-RH_binaural_440.0_443.0",
+      "freq": 3
+    }
+  ],
+  "gamma": [
+    {
+      "name": "delta-1hz-RH_binaural_440.0_441.0",
+      "freq": 26
+    },
+    {
+      "name": "gamma-27hz-RH_binaural_440.0_467.0",
+      "freq": 27
+    },
+    {
+      "name": "gamma-28hz-RH_binaural_440.0_468.0",
+      "freq": 28
+    },
+    {
+      "name": "gamma-29hz-RH_binaural_440.0_469.0",
+      "freq": 29
+    },
+    {
+      "name": "gamma-30hz-RH_binaural_440.0_470.0",
+      "freq": 30
+    },
+    {
+      "name": "gamma-31hz-RH_binaural_440.0_471.0",
+      "freq": 31
+    },
+    {
+      "name": "gamma-32hz-RH_binaural_440.0_472.0",
+      "freq": 32
+    },
+    {
+      "name": "gamma-33hz-RH_binaural_440.0_473.0",
+      "freq": 33
+    },
+    {
+      "name": "gamma-34hz-RH_binaural_440.0_474.0",
+      "freq": 34
+    },
+    {
+      "name": "gamma-35hz-RH_binaural_440.0_475.0",
+      "freq": 35
+    }
+  ],
+  "theta": [
+    {
+      "name": "theta-4hz-RH_binaural_440.0_444.0",
+      "freq": 4
+    },
+    {
+      "name": "theta-5hz-RH_binaural_440.0_445.0",
+      "freq": 5
+    },
+    {
+      "name": "theta-6hz-RH_binaural_440.0_446.0",
+      "freq": 6
+    },
+    {
+      "name": "theta-7hz-RH_binaural_440.0_447.0",
+      "freq": 7
+    }
+  ]
+}

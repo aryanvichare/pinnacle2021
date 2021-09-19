@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { useAuth } from "../lib/auth";
@@ -6,7 +6,12 @@ import Router from "next/router";
 
 const Onboarding = () => {
   const auth = useAuth();
-  console.log(auth);
+
+  useEffect(() => {
+    if (!auth.user) return;
+
+    Router.push("/onboarding/connect");
+  }, []);
 
   return (
     <div className="bg-black min-h-screen">

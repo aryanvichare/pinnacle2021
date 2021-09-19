@@ -1,0 +1,17 @@
+{
+  "sleep": {
+    "title": "Improve Sleep",
+    "waveDetails": "Wave: Theta (4-7 Hz) - Delta (1-3Hz)",
+    "description": "This program will improve your sleep by activating both tetha and delta waves. By lowering your frequency around that range, it’ll lower your cortisol levels just in time for you to drift off to sleep."
+  },
+  "relax": {
+    "title": "Deep Relaxation",
+    "waveDetails": "Wave: Alpha (8-12 Hz) - Theta (4-7 Hz) - Delta (1-3Hz)",
+    "description": "This program will improve your sleep by activating both tetha and delta waves. By lowering your frequency around that range, it’ll lower your cortisol levels just in time for you to drift off to sleep."
+  },
+  "focus": {
+    "title": "Improve Focus",
+    "waveDetails": "Wave: Beta & Gamma",
+    "description": "This program will improve your sleep by activating both tetha and delta waves. By lowering your frequency around that range, it’ll lower your cortisol levels just in time for you to drift off to sleep."
+  }
+}

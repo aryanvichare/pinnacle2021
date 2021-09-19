@@ -95,7 +95,7 @@ export default function Home() {
                 <div className="mt-6 flex flex-row space-x-4 items-center justify-start">
                   <button
                     onClick={() => Router.push("/onboarding")}
-                    className="inline-flex px-6 py-3 text-lg justify-center rounded bg-primary bg-opacity-90 hover:bg-green-500 transition-all text-gray-900 font-semibold focus:outline-none border-none "
+                    className="inline-flex px-6 py-3 text-lg justify-center rounded bg-primary bg-opacity-90 hover:bg-green-500 transition-all text-gray-900 font-semibold focus:outline-none border-none"
                   >
                     Try for free
                   </button>
@@ -183,7 +183,10 @@ export default function Home() {
           <div className="grid gap-8 items-start justify-center">
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-primary rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" />
-              <button  onClick={() => Router.push("/onboarding")} className="relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
+              <button
+                onClick={() => Router.push("/onboarding")}
+                className="relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600"
+              >
                 <span className="flex items-center space-x-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
