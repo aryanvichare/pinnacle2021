@@ -23,7 +23,7 @@ const Navbar = () => {
             alt="Hypnoband Logo"
           />
           <h1 className="text-primary font-bold tracking-wide text-xl">
-            HypnoBand
+            NeuroWay
           </h1>
         </a>
       </Link>

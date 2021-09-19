@@ -24,7 +24,7 @@ const Connect = () => {
                 Connect
               </div>
               <p className="mt-6 text-gray-100 leading-relaxed text-lg">
-                Connect HypnoBand
+                Connect NeuroWay
               </p>
             </div>
           </div>

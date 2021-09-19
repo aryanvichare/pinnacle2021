@@ -25,7 +25,7 @@ const HowItWorks = () => {
         </div>
         <div className="mt-24">
           <h2 className="text-primary font-semibold text-3xl text-center leading-tight">
-            What is HypnoBand?
+            What is NeuroWay?
           </h2>
           <p className="mt-4 text-gray-300 leading-relaxed text-sm max-w-screen-lg mx-auto">
             Hypnoband uses EEG monitoring device to detect your brainwaves, and

@@ -24,7 +24,7 @@ const Onboarding = () => {
               alt="Hypnoband Logo"
             />
             <h1 className="text-primary font-bold tracking-wide text-3xl">
-              HypnoBand
+              NeuroWay
             </h1>
           </a>
         </Link>

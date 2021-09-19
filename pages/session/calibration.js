@@ -5,16 +5,40 @@ import { useAuth } from "lib/auth";
 import Router from "next/router";
 import calibration from "../../data/calibration.json";
 import ReactAudioPlayer from "react-audio-player";
+import Countdown from "react-countdown";
 import clsx from "clsx";
+
+const FR_TIME = 381;
+const S_TIME = 222;
 
 const Calibration = () => {
   const auth = useAuth();
-  const [program, setProgram] = useState("sleep");
+  const [program, setProgram] = useState("");
   const [currentAudio, setCurrentAudio] = useState(null);
 
   const [thetaIndex, setThetaIndex] = useState(0);
 
   const audioRef = useRef();
+
+  useEffect(() => {
+    if (!auth.user) return;
+
+    const setDesiredProgram = async () => {
+      const docRef = firestore.collection("users").doc(auth?.user?.uid);
+      const documentSnapshot = await docRef.get();
+      const data = documentSnapshot.data();
+
+      setProgram(data?.program);
+    };
+
+    setDesiredProgram();
+  }, [auth.user]);
+
+  useEffect(() => {
+    if (!program) return;
+
+    setCurrentAudio(`/audio/${program}.wav`);
+  }, [program]);
 
   useEffect(() => {
     if (program === "sleep") {
@@ -41,44 +65,53 @@ const Calibration = () => {
       <div className="pt-16 max-w-screen-xl mx-auto px-4 md:px-8 xl:px-0">
         <div className="flex flex-row items-center justify-between">
           <div
-            onClick={() => setProgram("sleep")}
+            onClick={() => "sleep" === program && setProgram("sleep")}
             className={clsx(
               "cursor-pointer rounded-full px-6 py-3 bg-gray-900 text-gray-200 text-lg",
-              "sleep" === program && "bg-primary text-dg"
+              "sleep" === program
+                ? "bg-primary text-dg"
+                : "opacity-50 cursor-not-allowed"
             )}
           >
             Sleep
           </div>
           <div
-            onClick={() => setProgram("relax")}
+            onClick={() => "relax" === program && setProgram("relax")}
             className={clsx(
               "cursor-pointer rounded-full px-6 py-3 bg-gray-900 text-gray-200 text-lg",
-              "relax" === program && "bg-primary text-dg"
+              "relax" === program
+                ? "bg-primary text-dg"
+                : "opacity-50 cursor-not-allowed"
             )}
           >
             Relaxation
           </div>
           <div
-            onClick={() => setProgram("aware")}
+            onClick={() => "focus" === program && setProgram("focus")}
             className={clsx(
               "cursor-pointer rounded-full px-6 py-3 bg-gray-900 text-gray-200 text-lg",
-              "aware" === program && "bg-primary text-dg"
+              "focus" === program
+                ? "bg-primary text-dg"
+                : "opacity-50 cursor-not-allowed"
             )}
           >
-            Awareness
-          </div>
-          <div
-            onClick={() => setProgram("alert")}
-            className={clsx(
-              "cursor-pointer rounded-full px-6 py-3 bg-gray-900 text-gray-200 text-lg",
-              "alert" === program && "bg-primary text-dg"
-            )}
-          >
-            Alertness
+            Focus
           </div>
         </div>
       </div>
       <ReactAudioPlayer ref={audioRef} src={currentAudio} autoPlay />
+      <div className="max-w-screen-xl mx-auto text-center pt-48">
+        {program && (
+          <Countdown
+            date={
+              program === "sleep"
+                ? Date.now() + S_TIME * 1000
+                : Date.now() + FR_TIME * 1000
+            }
+            className="text-7xl font-extrabold text-white"
+          ></Countdown>
+        )}
+      </div>
     </OnboardingLayout>
   );
 };
