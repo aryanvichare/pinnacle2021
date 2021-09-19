@@ -1,6 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import ReactLoading from "react-loading";
+import axios from "axios";
 
 const Payment = () => {
+  const [loading, setLoading] = useState(false);
+
+  const handleTransaction = async () => {
+    setLoading(true);
+    // Create user on testnet
+    const response = await axios.post("/api/proxy?proxyRoute=neuroway", {
+      action: "keygen",
+    });
+
+    const { secret } = response.data;
+
+    // load xlm
+
+    const loadResponse = await axios.post("/api/proxy?proxyRoute=neuroway", {
+      action: "loadxlm",
+      publickey: response.data.public,
+    });
+
+    if (loadResponse.data.status === "failed") return;
+
+    // Handle payment
+    const paymentResponse = await axios.post("/api/proxy?proxyRoute=neuroway", {
+      action: "payment",
+      amount: "150",
+      secret: secret,
+    });
+
+    if (paymentResponse.statusCode === 200) {
+      console.log("+ Payment Success");
+    }
+    setLoading(false);
+  };
+
   return (
     <div>
       <section className="w-full py-20 bg-gray-100">
@@ -28,12 +63,12 @@ const Payment = () => {
                 </div>
               </div>
               <div className="flex items-center w-full mt-8 md:w-1/3 md:justify-end md:mt-0">
-                <a
-                  href="#_"
+                <button
+                  onClick={handleTransaction}
                   className="w-full px-10 py-5 text-xl font-semibold text-center text-white rounded-lg bg-gradient-to-br from-purple-500 to-primary md:w-auto"
                 >
                   Pay now
-                </a>
+                </button>
               </div>
             </div>
             <div className="px-10 py-8 bg-gray-900 border-t border-gray-700 bg-gradient-to-b from-gray-800 to-gray-900">
@@ -44,6 +79,11 @@ const Payment = () => {
                 Gain access to all your personalized binaural beats by buying
                 this service.
               </p>
+            </div>
+            <div className="w-full mx-auto text-center">
+              {loading && (
+                <ReactLoading className="mx-auto" type="bars" color="#fff" />
+              )}
             </div>
           </div>
         </div>
