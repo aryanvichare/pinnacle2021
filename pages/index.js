@@ -1,18 +1,8 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import invariant from "invariant";
-
-const navLinks = [
-  {
-    name: "How it works",
-    href: "how-it-works",
-  },
-  {
-    name: "Get Started",
-    href: "get-started",
-  },
-];
+import Navbar from " components/Navbar";
+import Router from "next/router";
 
 const features = [
   {
@@ -91,29 +81,7 @@ export default function Home() {
       </Head>
       <div className="relative min-h-screen bg-gradient-to-r from-black via-gray-900 to-blue-900">
         <div className="max-w-screen-xl mx-auto px-8 xl:px-0">
-          <nav className="flex flex-row items-center justify-between h-28">
-            <Link href="/">
-              <a className="flex flex-row items-center space-x-3">
-                <img
-                  className="h-8 w-8 object-contain"
-                  src="/images/logo.svg"
-                  alt="Hypnoband Logo"
-                />
-                <h1 className="text-primary font-bold tracking-wide text-xl">
-                  HypnoBand
-                </h1>
-              </a>
-            </Link>
-            <div className="flex items-center space-x-12">
-              {navLinks.map((l, idx) => (
-                <Link key={idx} href={l.href}>
-                  <a className="text-gray-100 text-md hover:opacity-95">
-                    {l.name}
-                  </a>
-                </Link>
-              ))}
-            </div>
-          </nav>
+          <Navbar />
           <div className="pt-24 pb-12 md:pt-52">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="flex flex-col justify-start">
@@ -125,7 +93,10 @@ export default function Home() {
                   and deepens relaxation.
                 </p>
                 <div className="mt-6 flex flex-row space-x-4 items-center justify-start">
-                  <button className="inline-flex px-6 py-3 text-lg justify-center rounded bg-primary bg-opacity-90 hover:bg-green-500 transition-all text-gray-900 font-semibold focus:outline-none border-none ">
+                  <button
+                    onClick={() => Router.push("/onboarding")}
+                    className="inline-flex px-6 py-3 text-lg justify-center rounded bg-primary bg-opacity-90 hover:bg-green-500 transition-all text-gray-900 font-semibold focus:outline-none border-none "
+                  >
                     Try for free
                   </button>
                 </div>
@@ -151,8 +122,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col md:ml-12 max-w-screen-md">
               <h2 className="text-primary font-semibold text-xl md:text-2xl lg:text-3xl leading-tight">
-                2/3 of adults fail to meet the 8-hours of sleep recommended by
-                the WHO
+                Our lifestyle changes
               </h2>
               <p className="mt-4 text-gray-100 leading-relaxed text-md">
                 Anxiety and depression nationwide hits all-time high since start
@@ -213,7 +183,7 @@ export default function Home() {
           <div className="grid gap-8 items-start justify-center">
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-primary rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" />
-              <button className="relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
+              <button  onClick={() => Router.push("/onboarding")} className="relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
                 <span className="flex items-center space-x-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -225,8 +195,8 @@ export default function Home() {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                      strokeWidth="2"
+                      d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
                     />
                   </svg>
                   <span className="pr-6 text-gray-100">
