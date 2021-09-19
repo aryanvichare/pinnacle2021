@@ -6,7 +6,7 @@ const Payment = () => {
       <section className="w-full py-20 bg-gray-100">
         <div className="max-w-3xl px-10 mx-auto">
           <h2 className="mb-1 text-xl text-3xl font-bold text-center">
-            Don't want to watch the ads?
+            Don&apos;t want to watch the ads?
           </h2>
           <p className="mb-10 text-center text-gray-500">
             Pay for one-time subscription using Stellar.
