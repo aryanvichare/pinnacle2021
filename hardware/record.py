@@ -84,3 +84,4 @@ r.create_record_then_export(record_name,
 							record_export_format,
 							record_export_version )
 # -----------------------------------------------------------
+### credits: Emotiv corp. tutorials in Python
