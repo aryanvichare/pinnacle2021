@@ -73,3 +73,4 @@ record_export_folder = 'your place to export, you should have write permission, 
 marker_numbers = 10
 m.demo_add_marker(record_export_folder, marker_numbers)
 # ----------------------------------------------
+### credits: Emotiv corp. tutorials in Python
